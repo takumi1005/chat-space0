@@ -25,8 +25,8 @@ Things you may want to cover:
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|mail||string|null: false, unique: true|
-|password||string||null: false|
+|mail|string|null: false, unique: true|
+|password|string|null: false|
 
 ### Association
 -has_many :messages
