@@ -1,0 +1,26 @@
+.chat-page
+  = render 'shared/side_bar'
+
+  .main-chat
+    .main-top
+      .main-top__left
+        %p.main-top__left__name
+          = @group.name
+        %ul.main-top__left__member
+          Member :
+          %li.main-top__left__member-list
+            - @group.users.each do |member|
+              = member.name
+      =link_to "Edit", edit_group_path(@group), class: 'main-top__right__edit'
+
+    .messages
+      = render @messages
+
+    .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
