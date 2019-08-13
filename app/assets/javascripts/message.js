@@ -1,12 +1,7 @@
 $(function(){
 
   function buildPost(message){
-    // var addImage = (message.image !== undefined)? `<img class="lower-message__content__image" src="${message.image.url}">`:"";
-    if (message.image.url === null){
-      var addImage = "";
-    }else{
-      var addImage = `<img class="lower-message__content__image" src="${message.image.url}">`;
-    }
+    var addImage = (message.image.url !== null)? `<img class="lower-message__content__image" src="${message.image.url}">`:"";
 
     var html = `<div class="message" data-message-id="${message.id}">
                   <div class="upper-message">
