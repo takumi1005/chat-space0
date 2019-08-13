@@ -33,18 +33,18 @@ Things you may want to cover:
 -has_many :users_groups
 -has_many :groups, through: :users_groups
 
-##groupsテーブル
+## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, unique: true|
 
-## Association
+### Association
 -has_many :messages
 -has_many :users_groups
 -has_many :users, through: :users_groups
 
 ## membersテーブル
-Column	Type	Options
+|Column|Type|Options|
 |------|----|-------|
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
